@@ -5,7 +5,7 @@
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 init-boxes-container">
 		<div class="init-boxes">
 			<hr>			
-			<h2 class = "btn btn-lg btn-primary btn-simul"> Arrival </h2>
+			<h2 class = "btn btn-lg btn-primary btn-simul" data-toggle="modal" data-target="#arrival_Modal"> Arrival </h2>
 			<hr>
 		</div>
 
@@ -21,4 +21,60 @@
 		</div>
 	</div>
 </div>
+<div class="modal fade modal-fullscreen force-fullscreen" id="arrival_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-content-arrival">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Welcome to .........</h4>
+      </div>
+      <div class="modal-body">
+	      <div class="panel panel-arrival">
+	        <table class="table table-bordered">
+	          <thead>
+	            <th>Team 1</th>
+	            <th>Team 2</th>
+	            <th>Place</th>
+	            <th>Date </th>
+	            <th>Price</th>    
+	          </thead>          
+	          <tr ng-repeat="match_t in today_matches | filter:myTeamFilter">
+	            <td>{{ match_t.team1 }}</td> 
+	            <td>{{ match_t.team2 }}</td>
+	            <td>{{ match_t.place }}</td> 
+	            <td>{{ match_t.date }}</td>
+	            <td><button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#tank_you_Modal">{{ match_t.price }} NOK</button></td> 
+	            <!--<td>
 
+	              <span class="glyphicon glyphicon-remove-circle red" ng-click="noneMatch(match_t, 'none')"></span>
+	            </td>    -->        
+	          </tr>
+	        </table>
+	      </div>
+      </div>
+      <div class="modal-footer">
+       <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal fade modal-fullscreen force-fullscreen" id="tank_you_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title"> Thank You! Enjoy the game </h4>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,93 @@
+  <br><br><br><br><br>
+  <div role="tabpanel jumbotron">
+
+  <!-- Nav tabs -->
+  <ul class="center nav nav-tabs nav-tabs-admin" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">On Arrival</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">On Game</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">On departure</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class=" tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="home">
+
+        <div class="jumbotron">
+          <div class="container">
+            <h3> Today's Game </h3>
+            <div class="panel">
+              <table class="table table-bordered">
+                <thead>
+                  <th>Team 1</th>
+                  <th>Team 2</th>
+                  <th>Place</th>
+                  <th>Date </th>
+                  <th>Price</th>    
+                </thead>          
+                <tr ng-repeat="match_t in today_matches | filter:myTeamFilter">
+                  <td>{{ match_t.team1 }}</td> 
+                  <td>{{ match_t.team2 }}</td>
+                  <td>{{ match_t.place }}</td> 
+                  <td>{{ match_t.date }}</td>
+                  <td>{{ match_t.price }}</td> 
+                  <td>
+
+                    <span class="glyphicon glyphicon-remove-circle red" ng-click="noneMatch(match_t, 'none')"></span>
+                  </td>            
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+          <div class="container">
+
+          <div class="col-xs-6">
+       <h3> Game Schedule</h3>            
+            <div class="form-group">
+              <input type="search" ng-model="search" placeholder="Match Search" class="form-control">
+            </div>
+          </div>
+
+            <div class="container">
+     
+
+              <table class="table table-striped">
+                <thead>
+                  <th>Team 1</th>
+                  <th>Team 2</th>
+                  <th>Place</th>
+                  <th>Date </th>
+                  <th>Price</th>    
+                </thead>
+                <tr ng-repeat="match in matches | filter:positionFilter | filter:draftedFilter | filter:search">
+                  <td>{{ match.team1 }}</td> 
+                  <td>{{ match.team2 }}</td>
+                  <td>{{ match.place }}</td> 
+                  <td>{{ match.date }}</td>
+                  <td>{{ match.price }}</td> 
+                  <td>
+                    <span class="glyphicon glyphicon-ok-circle green" ng-click="todayMatch(match, 'today')"></span>
+                    &nbsp;
+
+                  </td>
+                </tr>
+              </table>
+
+            </div>
+
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="profile">
+      on game
+
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="messages">
+
+      on departure
+    </div>
+
+  </div>
+
+</div>
+
+

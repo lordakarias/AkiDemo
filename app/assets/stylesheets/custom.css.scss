@@ -101,3 +101,43 @@ footer {
 	border-radius: 3px;
 	font-weight: bold;
 }
+
+.modal-content {
+  border-radius: 30%;
+  height: 500px;
+  background: rgba(121, 121, 121, 1);
+  box-shadow: 1px 5px 2px rgba(103, 41, 41, 0.23);
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+  padding-top: 160px;
+}
+
+.modal-content-arrival {
+  border-radius: 50%;
+  height: 500px;
+  background: rgba(58, 58, 58, 0.8);
+  box-shadow: 1px 5px 2px rgba(103, 41, 41, 0.23);
+  color: #000000;
+  font-weight: bold;
+  font-size: 15px;
+  padding-top: 100px;
+}
+
+.modal-title {
+  margin: 0px auto;
+  line-height: 1.428571429;
+  font-size: 30px;
+  color: white;
+  display: table;
+}
+
+.panel-arrival {
+  background-color: rgb(82, 80, 80);
+  color: white;
+}
+
+.nav-tabs-admin {
+  margin: 0px auto;
+  display: table;
+}

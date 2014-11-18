@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  team1: MyString
+  team2: MyString
+  place: MyString
+  date: MyString
+  price: MyString
+
+two:
+  team1: MyString
+  team2: MyString
+  place: MyString
+  date: MyString
+  price: MyString
